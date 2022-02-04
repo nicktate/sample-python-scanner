@@ -12,13 +12,13 @@ def main(args):
 
     # Add Banner
     print("-" * 50)
-    message += "-" * 50
+    message += "\n-" * 50
     print("Scanning Target: " + target)
-    message += "Scanning Target: " + target
+    message += "\nScanning Target: " + target
     print("Scanning started at:" + str(datetime.now()))
-    message += "Scanning started at:" + str(datetime.now())
+    message += "\nScanning started at:" + str(datetime.now())
     print("-" * 50)
-    message += "-" * 50
+    message += "\n-" * 50
 
     try:
 
@@ -31,7 +31,7 @@ def main(args):
             result = s.connect_ex((target,port))
             if result ==0:
                 print("Port {} is open".format(port))
-                message += "Port {} is open".format(port)
+                message += "\nPort {} is open".format(port)
             s.close()
 
     except KeyboardInterrupt:
