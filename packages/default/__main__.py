@@ -34,13 +34,6 @@ def main(args):
                 print("Port {} is open".format(port))
                 message += "\nPort {} is open".format(port)
 
-                try:
-                    url = "http://0.0.0.0:{}".format(port)
-                    resp = requests.get(url)
-                    print("\nresp: " + resp.text)
-                except Exception:
-                    print("request failed")
-                    pass
             s.close()
 
     except KeyboardInterrupt:
