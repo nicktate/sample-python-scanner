@@ -33,9 +33,9 @@ def main(args):
             if result ==0:
                 print("Port {} is open".format(port))
                 message += "\nPort {} is open".format(port)
-                url = "http://0.0.0.0:" + port
+                url = "http://0.0.0.0:{}".format(port)
                 resp = requests.get(url)
-                print("\nresp: " + resp)
+                print("\nresp: " + resp.text)
             s.close()
 
     except KeyboardInterrupt:
