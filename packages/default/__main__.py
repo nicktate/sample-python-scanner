@@ -1,5 +1,6 @@
 import sys
 import socket
+import requests
 from datetime import datetime
 
 def main(args):
@@ -16,9 +17,9 @@ def main(args):
     print("Scanning Target: " + target)
     message += "\nScanning Target: " + target
     print("Scanning started at:" + str(datetime.now()))
-    message += "\nScanning started at:" + str(datetime.now())
+    message += "\nScanning started at:" + str(datetime.now()) + "\n"
     print("-" * 50)
-    message += "\n-" * 50
+    message += "-" * 50
 
     try:
 
@@ -32,6 +33,10 @@ def main(args):
             if result ==0:
                 print("Port {} is open".format(port))
                 message += "\nPort {} is open".format(port)
+                url = "0.0.0.0:" + port
+                resp = requests.get(url)
+                message += "\nstatus code: " + resp.status_code
+                message += "\nstatus code: " + resp.body
             s.close()
 
     except KeyboardInterrupt:
