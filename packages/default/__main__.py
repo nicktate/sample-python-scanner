@@ -1,4 +1,3 @@
-import pyfiglet
 import sys
 import socket
 from datetime import datetime
@@ -8,10 +7,6 @@ def main(args):
     name = name if name else "World"
     message = "Hello, " + name + "!";
     print(message)
-
-    ascii_banner = pyfiglet.figlet_format("PORT SCANNER")
-    message += ascii_banner
-    print(ascii_banner)
 
     target = '0.0.0.0'
 
