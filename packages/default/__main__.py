@@ -10,15 +10,10 @@ def main(args):
     print(message)
 
     ascii_banner = pyfiglet.figlet_format("PORT SCANNER")
+    message += ascii_banner
     print(ascii_banner)
 
-    # Defining a target
-    if len(sys.argv) == 2:
-
-        # translate hostname to IPv4
-        target = socket.gethostbyname(sys.argv[1])
-    else:
-        print("Invalid amount of Argument")
+    target = '0.0.0.0'
 
     # Add Banner
     print("-" * 50)
@@ -28,7 +23,7 @@ def main(args):
     print("Scanning started at:" + str(datetime.now()))
     message += "Scanning started at:" + str(datetime.now())
     print("-" * 50)
-    message += "-" * 50)
+    message += "-" * 50
 
     try:
 
